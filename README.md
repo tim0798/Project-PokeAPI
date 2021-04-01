@@ -24,7 +24,7 @@ Seguir los siguientes pasos para obtener la base de datos que se esta usa en el 
 2021-04-01 09:00:06.058  INFO 8684 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
 2021-04-01 09:00:06.062  INFO 8684 --- [  restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:d26a346f-b19f-4bb8-b20a-cec37a96700e'
 ```
-2.- Abrir el enlace [http://localhost:8080/MiPokemonAPI/h2-console](http://localhost:8080/MiPokemonAPI/h2-console) (mostrara un login), poner la credencial copiada anteriormente en el valor de  JDBC URL. Ahí encontraremos la tabla POKEMON, en la cual se guardan los datos.
+2.- Abrir el enlace [http://localhost:8080/MiPokemonAPI/h2-console](http://localhost:8080/MiPokemonAPI/h2-console) (mostrara un Login), poner la credencial copiada anteriormente en el valor JDBC URL y clic en Connect (Conectar solo poniendo la JDBC URL). Ahí encontraremos la tabla POKEMON, en la cual se guardan los datos.
 
 
 ## Uso 

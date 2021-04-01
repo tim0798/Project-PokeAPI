@@ -27,7 +27,7 @@ Seguir los siguientes pasos para obtener la base de datos que se esta usa en el 
 2.- Abrir el enlace [http://localhost:8080/MiPokemonAPI/h2-console](http://localhost:8080/MiPokemonAPI/h2-console) (mostrara un Login), poner la credencial copiada anteriormente en el valor JDBC URL y clic en Connect (Conectar solo poniendo la JDBC URL). Ahí encontraremos la tabla POKEMON, en la cual se guardan los datos.
 
 
-## Uso 
+## Como usar 
 Ejecute el proyecto a través de su IDE y diríjase a [http://localhost:8080/MiPokemonAPI/help](http://localhost:8080/MiPokemonAPI/help) para obtener documentación sobre el uso de la API
 
 ## Obtenga información sobre Generaciones de Pokémones, Rango de Pokémones, Pokémon, etc. 

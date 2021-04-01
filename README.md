@@ -3,7 +3,7 @@
 Esta es una API de servicios REST que consume los servicios REST de PokeApi ( https://pokeapi.co/ ) y además extiende algunas funcionalidades para la persistencia de datos en una base de datos en memoria H2.
 
 ## Qué hay adentro
-Este proyecto se basa en el proyecto [Spring Boot 2.4.4](http://projects.spring.io/spring-boot/) y utiliza los siguientes paquetes:
+Este proyecto se basa en el proyecto [Spring Boot 2.4.4](http://projects.spring.io/spring-boot/) e incluye:
 - Maven
 - Spring Data JPA
 - H2 Database SQL

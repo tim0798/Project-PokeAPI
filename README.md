@@ -4,6 +4,7 @@ Esta es una API de servicios REST que consume los servicios REST de PokeApi ( ht
 
 ## Qué hay adentro
 Este proyecto se basa en el proyecto [Spring Boot 2.4.4](http://projects.spring.io/spring-boot/) e incluye:
+- API de servicios REST 
 - Maven
 - Spring Data JPA
 - H2 Database SQL
@@ -11,7 +12,7 @@ Este proyecto se basa en el proyecto [Spring Boot 2.4.4](http://projects.spring.
 - Validation 
 - Spring Boot DevTools
 - Thymeleaf
-- API de servicios REST 
+
 
 ## Instalación 
 El proyecto se crea con Maven, por lo que solo necesita importarlo a su IDE y construir el proyecto para resolver las dependencias

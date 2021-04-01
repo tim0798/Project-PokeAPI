@@ -1,0 +1,1 @@
+console.log("Esto fue escrito desde Javascript");

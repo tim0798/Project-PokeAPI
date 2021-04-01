@@ -1,0 +1,204 @@
+
+
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Help</title>
+
+
+<script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/utileria.js}"></script>
+
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/estilos.css}" />
+
+</head>
+
+<body>
+	<div class="container mt-3">
+	
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Acerca de MiPokemonAPI</h1>
+					Esta es una API de servicios REST que su funcionalidad parte de las
+					especificaciones del documento <strong>Test Java</strong>.
+				
+			</div>
+			
+			<div class="col-md-12 mt-4">
+			<h1>Servicios REST</h1>
+				<p class="lead">
+					<span class="h5"> <span class="p-1 p-1 bg-success text-white">Generaciones</span> Obtener los Pokémones de cada generación (Consumiendo la API <a target="blank" href="https://pokeapi.co/">https://pokeapi.co/</a> desde Spring Boot)</span> <br/>
+					<span class="text-success h5"> GET </span> <span class="h5 " ><u>http://localhost:8080/MiPokemonAPI/generaciones/{generacion}</u></span>
+					<table style="width: 100%">
+						<tr><th>Parámetros</th> <th>Tipo</th> <th>Requerido</th> <th>Posibles valores</th></tr>
+						<tr> <td>{generacion}</td> <td>String</td> <td>Si</td> <td>1, 2, 3, 4, 5 y 6</td> </tr>
+					</table>				
+					Respuesta ejemplo:<br/><code>[{"id":1,"name":"bulbasaur","types":[{"slot":1,"type":{"name":"grass","url":"https://pokeapi.co/api/v2/type/12/"}},{"slot":2,"type":{"name":"poison","url":"https://pokeapi.co/api/v2/type/4/"}}]},{"id":2,"name":"ivysaur","types":[{"slot":1,"type":{"name":"grass","url":"https://pokeapi.co/api/v2/type/12/"}},{"slot":2,"type":{"name":"poison","url":"https://pokeapi.co/api/v2/type/4/"}}]}]</code>
+				</p>
+			</div>
+					
+			
+			<div class="col-md-12 mt-3">
+				<p class="lead">
+					<span class="h5"> <span class="p-1 p-1 bg-success text-white">Rango de Pokémones</span> Obtener una lista de Pokémon con un rango que va del Pokémon número a al b (Consumiendo la API <a target="blank" href="https://pokeapi.co/">https://pokeapi.co/</a> desde Spring Boot)</span> <br/>
+					<span class="text-success h5"> GET </span> <span class="h5 " ><u>http://localhost:8080/MiPokemonAPI/listaPokemones/{a}/{b}</u></span>
+					<table style="width: 100%">
+						<tr><th>Parámetros</th> <th>Tipo</th> <th>Requerido</th> <th>Posibles valores</th></tr>
+						<tr> <td>{a}</td> <td>Entero</td> <td>Si</td> <td>1, 2, 3, 4, 5, etc.</td> </tr>
+						<tr> <td>{b}</td> <td>Entero</td> <td>Si</td> <td>2, 4, 6, 8, 10, etc.</td> </tr>
+					</table>				
+					Respuesta ejemplo:<br/><code>[{"id":11,"name":"metapod","types":[{"slot":1,"type":{"name":"bug","url":"https://pokeapi.co/api/v2/type/7/"}}]},{"id":12,"name":"butterfree","types":[{"slot":1,"type":{"name":"bug","url":"https://pokeapi.co/api/v2/type/7/"}},{"slot":2,"type":{"name":"flying","url":"https://pokeapi.co/api/v2/type/3/"}}]},{"id":13,"name":"weedle","types":[{"slot":1,"type":{"name":"bug","url":"https://pokeapi.co/api/v2/type/7/"}},{"slot":2,"type":{"name":"poison","url":"https://pokeapi.co/api/v2/type/4/"}}]}]</code>
+				</p>
+			</div>
+			
+			<div class="col-md-12 mt-3">
+				<p class="lead">
+					<span class="h5"> <span class="p-1 p-1 bg-success text-white">Obtener Pokémon</span> Obtener Pokémon buscándolo por su nombre o número (Consumiendo la API <a target="blank" href="https://pokeapi.co/">https://pokeapi.co/</a> desde Spring Boot)</span> <br/>
+					<span class="text-success h5"> GET </span> <span class="h5 " ><u>http://localhost:8080/MiPokemonAPI/buscarPokemon/{identificador}</u></span>
+					<table style="width: 100%">
+						<tr><th>Parámetros</th> <th>Tipo</th> <th>Requerido</th> <th>Posibles valores</th></tr>
+						<tr> <td>{identificador}</td> <td>String, Entero</td> <td>Si</td> <td>String {golbat, oddish, venonat, wigglytuff, etc.}, Enteros {1, 2, 3, 4, 5, 6, etc.}</td> </tr>
+					</table>				
+					Respuesta ejemplo:<br/><code>{"id":43,"name":"oddish","types":[{"slot":1,"type":{"name":"grass","url":"https://pokeapi.co/api/v2/type/12/"}},{"slot":2,"type":{"name":"poison","url":"https://pokeapi.co/api/v2/type/4/"}}]}</code>
+				</p>
+			</div>
+			
+			<div class="col-md-12 mt-3">
+				<p class="lead">
+					<span class="h5"> <span class="p-1 p-1 bg-success text-white">Guardar Pokémones Local</span> Almacenar un Pokémon en la base de datos local (h2), guardando un apodo único para él, su especie, su ataque, su defensa y su salud (Estos tres últimos la aplicación las genera al azar en un rango de 0 a 15 con números enteros).</span> <br/>
+					<span class="text-success h5"> PUT  </span> <span class="h5 " ><u>http://localhost:8080/MiPokemonAPI/guardarPokemon</u></span>
+					<table style="width: 100%">
+						<tr><th>Parámetros</th> <th>Tipo</th> <th>Requerido</th> <th>Posibles valores</th></tr>
+						<tr> <td>{apodo}</td> <td>String</td> <td>Si</td> <td>Pokemono, Pikachuy, Pikoro, etc.</td> </tr>
+						<tr> <td>{especie}</td> <td>String</td> <td>Si</td> <td>Aves, Reptiles, Ranas, etc.</td> </tr>
+						
+					</table>				
+					Respuesta ejemplo:<br/><code>¡Pokemon guardado! PokemonEntity [id=6, apodo=Rana Cola Pelada, especie=Reptiles, ataque=9, defensa=2, salud=14]</code>
+				</p>
+			</div>
+			
+			<div class="col-md-12 mt-3">
+				<p class="lead">
+					<span class="h5"> <span class="p-1 p-1 bg-success text-white">Obtener Pokémon Local</span>Consultar desde la base de datos local (h2) un Pokémon capturado por su apodo</span> <br/>
+					<span class="text-success h5"> GET  </span> <span class="h5 " ><u>localhost:8080/MiPokemonAPI/obtenerPokemon/{apodo}</u></span>
+					<table style="width: 100%">
+						<tr><th>Parámetros</th> <th>Tipo</th> <th>Requerido</th> <th>Posibles valores</th></tr>
+						<tr> <td>{apodo}</td> <td>String</td> <td>Si</td> <td>Pokebola, Pokegato, Pokerana, etc.</td> </tr>
+					</table>				
+					Respuesta ejemplo:<br/><code>{"id":9,"apodo":"Pokegato","especie":"Felino","ataque":4,"defensa":1,"salud":0}</code>
+				</p>
+			</div>
+			
+			<div class="col-md-12 mt-3">
+				<p class="lead">
+					<span class="h5"> <span class="p-1 p-1 bg-success text-white">Pokémones Especies Local</span>Consultar desde la base de datos local (H2) todos los Pokémon capturados de una misma especie.</span> <br/>
+					<span class="text-success h5"> GET </span> <span class="h5 " ><u>http://localhost:8080/MiPokemonAPI/consultarPokemonesPorEspecie/{especie}</u></span>
+					<table style="width: 100%">
+						<tr><th>Parámetros</th> <th>Tipo</th> <th>Requerido</th> <th>Posibles valores</th></tr>
+						<tr> <td>{especie}</td> <td>String</td> <td>Si</td> <td>Felinios, Ovíparo, Aves, Reptiles, etc </td> </tr>
+					</table>				
+					Respuesta ejemplo:<br/><code>[{"id":9,"apodo":"Pokegato","especie":"Felino","ataque":4,"defensa":1,"salud":0},{"id":10,"apodo":"Tigre","especie":"Felino","ataque":12,"defensa":4,"salud":0},{"id":11,"apodo":"Chita","especie":"Felino","ataque":3,"defensa":11,"salud":10}]</code>
+				</p>
+			</div>
+			
+			<div class="col-md-12 mt-4">
+				<h1>Test Java con respuestas</h1>
+				<OL TYPE=i>
+					<LI>Usando los servicios ofrecidos en PokeApi (<a
+						target="blank" href="https://pokeapi.co/">https://pokeapi.co/</a>)
+						desarrollar una aplicación standalone con <strong>Java 8,
+							Maven, Base de datos H2 y el Framework de Spring Boot</strong> que exponga
+						servicios web <strong>REST</strong> que ofrezca las siguientes
+						funcionalidades:
+						<OL TYPE=A>
+							<LI>Obtener una lista con los Pokémon que componen las
+								generaciones de la 1ra a la 6ta, en esa lista debe aparecer el
+								nombre de los Pokémon, su número y sus tipos.
+								<ol>
+									<li>1ra generación: Pokémon del 1 al 151.<span
+										class="text-success"> GET </span> <a target="blank"
+										href="http://localhost:8080/MiPokemonAPI/generaciones/1">http://localhost:8080/MiPokemonAPI/generaciones/1</a></li>
+									<li>2da generación: Pokémon del 152 al 251.<span
+										class="text-success"> GET </span> <a target="blank"
+										href="http://localhost:8080/MiPokemonAPI/generaciones/2">http://localhost:8080/MiPokemonAPI/generaciones/2</a></li>
+									<li>3ra generación: Pokémon del 252 al 386.<span
+										class="text-success"> GET </span> <a target="blank"
+										href="http://localhost:8080/MiPokemonAPI/generaciones/3">http://localhost:8080/MiPokemonAPI/generaciones/3</a></li>
+									<li>4ta generación: Pokémon del 387 al 493.<span
+										class="text-success"> GET </span> <a target="blank"
+										href="http://localhost:8080/MiPokemonAPI/generaciones/4">http://localhost:8080/MiPokemonAPI/generaciones/4</a></li>
+									<li>5ta generación: Pokémon del 494 al 649.<span
+										class="text-success"> GET </span> <a target="blank"
+										href="http://localhost:8080/MiPokemonAPI/generaciones/5">http://localhost:8080/MiPokemonAPI/generaciones/5</a></li>
+									<li>6ta generación: Pokémon del 650 al 721.<span
+										class="text-success"> GET </span> <a target="blank"
+										href="http://localhost:8080/MiPokemonAPI/generaciones/6">http://localhost:8080/MiPokemonAPI/generaciones/6</a></li>
+								</ol>
+							<LI>Obtener una lista de Pokémon con un rango que vaya del
+								Pokémon número a al b, en esa lista debe aparecer el nombre de
+								los Pokémon, su número y sus tipos.<span class="text-success">
+									GET </span> <a target="blank"
+								href="http://localhost:8080/MiPokemonAPI/listaPokemones/2/6">http://localhost:8080/MiPokemonAPI/listaPokemones/2/6</a>
+							</li>
+							<LI>Obtener el nombre, número y tipos de un Pokemon
+								buscándolo por su nombre o número.<span class="text-success">
+									GET </span> <a target="blank"
+								href="http://localhost:8080/MiPokemonAPI/buscarPokemon/ivysaur">http://localhost:8080/MiPokemonAPI/buscarPokemon/ivysaur</a>
+							</li>
+							<LI>Almacenar un Pokémon en la base de datos, guardando un
+								apodo para él, debe ser único, su especie, su ataque, su defensa
+								y su salud (Estos tres últimos la aplicación debe general estos
+								valores al azar en un rango de 0 a 15 con números enteros).<span
+								class="text-success"> PUT </span> <a href="#save">http://localhost:8080/MiPokemonAPI/guardarPokemon</a>
+							</li>
+							<LI>Consultar desde la base de datos un Pokémon capturado
+								por su apodo, debe devolver el apodo, la especie, ataque,
+								defensa, salud, tipos y número. <span class="text-success">
+									GET </span> <a target="blank"
+								href="http://localhost:8080/MiPokemonAPI/obtenerPokemon/pokebola">http://localhost:8080/MiPokemonAPI/obtenerPokemon/pokebola</a>
+							</li>
+							<LI>Consultar desde la base de datos todos los Pokémon
+								capturados de una misma especie. <span class="text-success">
+									GET </span> <a target="blank"
+								href="http://localhost:8080/MiPokemonAPI/consultarPokemonesPorEspecie/Reptiles">http://localhost:8080/MiPokemonAPI/consultarPokemonesPorEspecie/Reptiles</a>
+							</li>
+							<LI>Servicio en la url /help que te devuelva toda la
+								información necesaria para consumir los otros 6, el nombre del
+								desarrollador y su información de contacto. En vez de un
+								servicio REST este se puede desarrollar como una web simple solo
+								con HTML5, CSS3 y JS estándar.<span class="text-success">
+									GET </span> <a href="http://localhost:8080/MiPokemonAPI/help">http://localhost:8080/MiPokemonAPIMiPokemonAPI/help</a>
+							</li>
+						</OL>
+					<LI>Entregar el código del proyecto en un repositorio público
+						de GitHub o GitLab, con un archivo README.md que como compilarlo y
+						ejecutarlo. Se puede agregar al repositorio el ejecutable, es
+						opcional. Se toma en cuenta manejo de LOGs, base de datos, consumo
+						de servicios de PokeApi, documentación técnica (Javadoc y
+						README.md), uso de los verbos HTTP para consumir los servicios
+						REST y uso de los estados HTTP para responder a estos.
+				</OL>
+
+			</div>
+			
+			<div class="col-md-12 mt-5">
+			<p class="h5">
+				Desarrollador: <strong>Timoteo González Nava</strong><br/>
+				Correo electrónico: <strong>timoteogonzaleznava@gmail.com</strong><br/> 
+				Teléfono celular: <strong>777 19 35 204</strong><br/>
+
+			</p>
+			</div>
+
+
+		</div>
+		<br />
+	</div>
+</body>
+</html>

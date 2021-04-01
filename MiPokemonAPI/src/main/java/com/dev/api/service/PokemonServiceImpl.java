@@ -115,6 +115,7 @@ public class PokemonServiceImpl implements PokemonService {
 	 */
 	@Override
 	public PokemonEntity guardarPokemon(PokemonEntity pokemon) {
+		pokemon.setApodo(pokemon.getApodo().trim());
 		pokemon.setAtaque((byte) ThreadLocalRandom.current().nextInt(0, 15));
 		pokemon.setDefensa((byte) ThreadLocalRandom.current().nextInt(0, 15));
 		pokemon.setSalud((byte) ThreadLocalRandom.current().nextInt(0, 15));
